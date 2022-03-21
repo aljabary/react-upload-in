@@ -1,13 +1,68 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.rui-progress{
+  @apply h-1 mt-2 w-full bg-gray-300
+}
+.rui-progress>.determinate{
+  @apply h-1 bg-sky-600
+}
+.rui-progress-bar{
+  position:absolute;
+  width:100%;
+  height:5px;
+  overflow-x: hidden;
+}
+.react-upload-in{
+  @apply flex flex-col space-y-2 rounded-lg p-5 w-full
+}
+.react-upload-in.rui-theme-default{
+@apply  bg-gray-100 
+}
+.react-upload-in.rui-theme-sky{
+@apply  bg-sky-100 
+}
+.react-upload-in.rui-theme-light{
+@apply  bg-white border 
+}
+.react-upload-in>.panel{
+  @apply flex justify-start space-x-4
+}
+.react-upload-in>.panel>.label{
+  @apply py-2  text-base
+}
+.react-upload-in>.list-upload{
+  @apply flex flex-col
+}
+.react-upload-in>.list-upload>.preview{
+  @apply flex py-1 space-x-2 rounded-lg p-2 mt-2
+}
+.react-upload-in.rui-theme-default>.list-upload>.preview{
+  @apply  bg-gray-200 
+}
+.react-upload-in.rui-theme-sky>.list-upload>.preview{
+  @apply  bg-sky-200 
+}
+.react-upload-in.rui-theme-light>.list-upload>.preview{
+  @apply  border 
+}
+.react-upload-in>.list-upload>.preview>img{
+  @apply w-20 h-20 object-cover rounded-md
+}
+.react-upload-in>.list-upload>.preview>.meta{
+  @apply flex flex-col px-1  w-full
+}
+.react-upload-in>.list-upload>.preview>.meta>.btn-remove{
+  @apply flex justify-end cursor-pointer 
+}
+.react-upload-in>.list-upload>.preview>.meta>.line-clamp{
+  @apply text-sm text-gray-600
+
+}
+.line-clamp {
+    overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; 
 }
