@@ -1,23 +1,36 @@
 {
   "name": "react-upload-in",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "author": "Ibnu Nugraha",
-  "keywords": ["react", "components", "upload","data","ui","file","image","component"],
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "files": [ "dist", "README.md" ],
+  "keywords": [
+    "react",
+    "components",
+    "upload",
+    "data",
+    "ui",
+    "file",
+    "image",
+    "component"
+  ],
+  "main": "dist/Uploader.js",
+  "module": "dist/Uploader.js",
+  "typings": "dist/uploader.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aljabary/react-upload-in.git"
   },
+  "license": "MPL-2.0",
   "dependencies": {
-    "@headlessui/react": "^1.5.0",
-    "@heroicons/react": "^1.0.6",
-    "@testing-library/jest-dom": "^5.16.2",
-    "@testing-library/react": "^12.1.4",
-    "@testing-library/user-event": "^13.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
@@ -25,9 +38,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "babel src/lib --out-dir dist --copy-files",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "publish:npm": "(if exist dist rmdir /s /q dist) && mkdir dist && set NODE_ENV=production && babel ./src/uploader -d dist --copy-files"
   },
   "eslintConfig": {
     "extends": [
@@ -48,7 +62,12 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.16.7",
     "autoprefixer": "^10.4.4",
+    "babel-preset-stage-2": "^6.24.1",
     "postcss": "^8.4.12",
     "tailwindcss": "^3.0.23"
   }
