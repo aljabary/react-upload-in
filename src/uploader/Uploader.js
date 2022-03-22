@@ -1,5 +1,6 @@
-import React, {Component} from 'react'
-import UploadPreview from './UploadPreview'
+import React, {Component} from 'react';
+import UploadPreview from './UploadPreview';
+import './Uploader.css'
 class Uploader extends Component {
   state={files:[], enabled:true,fterror:false, errors:[]};
   filetypes=[]
