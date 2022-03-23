@@ -7,6 +7,7 @@ This is the react component for upload files or images with easier and faster, s
 ```
 npm i react-upload-in
 ```
+#### [Demo and Tutorial] (https://youtu.be/5vU4DanvzPk) 
 #### Attributes
 | Attributes  | type | descriptions |
 | ------------- | ------------- | ------------- |
@@ -17,6 +18,7 @@ npm i react-upload-in
 | **action** | string | URL endpoint for upload to server |
 | **filetypes** | array string | determine file support for upload by extentions, e.g: "png", "jpg" |
 | **buttonText** | string | The text for button browse |
+| **setHeader** | object | set header request to server |
 | **removeText** | string | label text for remove button |
 | **image** | boolean | default *true*, wether you aim this uploader for image |
 | **hideOnSuccess** | boolean | default *false*, when upload has finish if you want hide preview you can set *true* |
@@ -35,6 +37,7 @@ import Uploader from 'react-upload-in'
       image={false}
       onResult={this.resultUpload.bind(this)} 
       onRemoved={this.onRemoved.bind(this)}
+      removeText="remove"
       hideOnSuccess={true}/>
     </div>
 ````
@@ -72,6 +75,7 @@ onRemoved(file){
       label="Upload max 5 photos" 
       buttonText={"Upload"}
       action={"http://localhost/ok/upload.php"}
+      setHeader={{key:'Authorization',value:'yourtoken'}}
       filetypes={["png","jpg","pdf"]} 
       image={false}
       onResult={this.resultUpload.bind(this)} 
